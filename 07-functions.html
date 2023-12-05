@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Functions</title>
+  </head>
+  <body>
+      <script>
+        /*
+      function function1(){
+        console.log('hello');
+        console.log(2 + 2);
+      }
+      function1();
+      function1(); 
+      function calculateTax(cost, taxPercent){
+        console.log(cost * taxPercent);
+      }
+      calculateTax(2000,0.1);
+      calculateTax(5000, 0.2);*/
+     
+      function greet(name){
+        if(!name){
+          console.log(`Hi there`);
+        }else {
+          console.log(`Hello ${name}`)
+        }
+      }
+      function converToFahrenheit (degree){
+      fahrenheitNumber =  (degree * 9/5) + 32;
+        console.log(fahrenheitNumber);
+      }
+      function converToCelsius (degree){
+       celsiusNumber = (degree - 32) * 5/9 ;
+        console.log(celsiusNumber);
+      }
+     function convertTemperature (degree, unit){
+      if(unit == 'c'){
+        fahrenheitNumber =  (degree * 9/5) + 32;
+        return fahrenheitNumber;
+        // console.log(`${fahrenheitNumber}F`);
+      }else if(unit == 'f'){
+        celsiusNumber = (degree - 32) * 5/9 ;
+        return celsiusNumber;
+        // console.log(`${celsiusNumber}C`);
+      }
+     }
+     console.log(convertTemperature(25 , 'c'));
+      </script>
+  </body>
+</html>

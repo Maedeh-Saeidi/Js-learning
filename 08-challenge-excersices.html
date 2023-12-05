@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <button onclick="playGame('heads');">heads</button>
+    <button onclick="playGame('tails');">tails</button>
+    <script>
+      const result = Math.random();
+      console.log(result);
+      if(result >= 1/2)
+        computerMove = 'heads';
+      else
+        computerMove = 'tails';
+        console.log(computerMove);
+
+      function playGame (guess){
+        if (guess === computerMove)
+        console.log('You lose!');
+      else
+      console.log('You win!');
+      }
+      
+      
+    </script>
+  </body>
+</html>
