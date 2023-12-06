@@ -5,15 +5,54 @@
   </head>
   <body>
     <p>Youtube subscribe button</p>
-   <button class="js-subscribe-btn" onclick="convertButton ()">subscribe</button>
-<script>
-  function convertButton (){
-  if(document.querySelector('.js-subscribe-btn').innerText === 'subscribe'){
-    document.querySelector('.js-subscribe-btn').innerHTML = 'subscribed';
-  }else {
-    document.querySelector('.js-subscribe-btn').innerHTML = 'subscribe';
-  }
-}
-</script>
+    <button class="js-subscribe-btn" onclick="convertButton()">
+      subscribe
+    </button>
+    <p>Amezon Shipping Calculator</p>
+    <p>orders under 40$ = +$10 shipping.</p>
+    <p>orders over $40 = FREE shipping.</p>
+    <input
+      class="js-const-input"
+      type="number"
+      id="numberInput"
+      placeholder="cost of order"
+      onkeydown="console.log(event.key); handleCostKeyDown (event);"
+    />
+    <button onclick="calculateTotal();">Calculate</button>
+    <p class="js-result"></p>
+    <script>
+       String(25);
+      console.log('25' - 5); 
+      //more details about " window-object :
+      // window.console.log('window');
+      // window.alert  
+
+      function calculateTotal() {
+        const inputElement = document.querySelector(".js-const-input");
+        let cost = Number(inputElement.value);
+        if (cost <= 40) {
+          cost += 10;
+          console.log(cost);
+          document.querySelector(".js-result").innerHTML = `$${cost}`;
+        } else {
+          document.querySelector(".js-result").innerHTML = `$${cost}`;
+        }
+      }
+
+      function convertButton() {
+        if (
+          document.querySelector(".js-subscribe-btn").innerText === "subscribe"
+        ) {
+          document.querySelector(".js-subscribe-btn").innerHTML = "subscribed";
+        } else {
+          document.querySelector(".js-subscribe-btn").innerHTML = "subscribe";
+        }
+      }
+      function handleCostKeyDown(event) {
+        if (event.key === "Enter") {
+          calculateTotal();
+        }
+      }
+    </script>
   </body>
 </html>
