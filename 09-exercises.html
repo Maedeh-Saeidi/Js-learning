@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>09-DOM-Exercises</title>
+  </head>
+  <body>
+    <button class="js-9abtn" onclick="displayConsole('.js-9abtn');">9a</button>
+    <button class="js-9bbtn" onclick="changeBtnName('.js-9bbtn')">9b</button>
+    <button
+      onclick="document.querySelector('.js-btn-result').innerHTML = 'You chose: heads.';"
+    >
+      heads
+    </button>
+    <button
+      onclick="document.querySelector('.js-btn-result').innerHTML = 'You chose: tails.';"
+    >
+      tails
+    </button>
+    <p></p>
+    <input type="text" placeholder="Name" class="js-const-input" onkeydown="console.log(event.key); function2(event)"/>
+    <button 
+    onclick="function1();"
+    >Submit</button>
+    <p class="js-btn-result"></p>
+    <script>
+      function function1(){
+        const textELement = document.querySelector('.js-const-input');
+        let name = textELement.value;
+        document.querySelector('.js-btn-result').innerHTML = `Your name is ${name}`;
+      }
+      function displayConsole(name) {
+        console.log(document.querySelector(name).innerHTML);
+      }
+      function changeBtnName(name) {
+        document.querySelector(name).innerHTML = "9b done!";
+      }
+      function function2(event){
+        if(event.key === "Enter"){
+          function1(event.key);
+        }
+      }
+    </script>
+  </body>
+</html>
