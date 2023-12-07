@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>15 Azar</title>
+</head>
+<body>
+  <h1>1402/09/15</h1>
+  <p class="js-btn"></p>
+  <button onclick="function1();">Result</button>
+  <script>
+    function function1(){
+      const names = ["Samaneh", "Melika", "Bita", "Mary", "Faranak", "Mahtab"];
+      const randomIndex = Math.floor(Math.random() * names.length);
+      document.querySelector('.js-btn').innerHTML = `${ names[randomIndex]}`;
+    }
+  </script>
+</body>
+
+</html>
