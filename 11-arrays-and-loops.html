@@ -44,10 +44,27 @@
           'wash dishes'
         ];
         const arrayLength = todoList.length;
-        for(let n = 0, arrayLength > n, n++){
-          console.log(todoList[n]);
-        }
-
+        // for(const n = 0, n < arrayLength , n++){
+        //   console.log(todoList[n]);
+        // }
+        let n = 0;
+          while (n < arrayLength){
+            console.log(todoList[n]);
+            n++;
+          }
+          const num = [1, 1 , 3];
+          let total = 0;
+          for(let i = 0 ; i < num.length; i++){
+            const nums = num[i];
+            total += nums;
+          };
+          console.log(total);
+          const numsDoubled = [];
+          for (let i = 0; i < num.length; i++){
+            const nums = num[i];
+            numsDoubled.push(nums * 2);
+          }
+          console.log(numsDoubled);
         </script>
   </body>
 </html>
