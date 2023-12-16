@@ -11,7 +11,8 @@ console.log(primeNumber(121));
 
 function isPrime1(n){
 if( n < 0) return false;
-for(let i = 2 ; i < n ; i++ ){
+for(let i = 2 ; i < Math.sqrt(num) ; i++ ){
+//this is more optimized than my solution
   if( n % i === 0 ) return false;
 }
 return true;
