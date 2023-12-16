@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>First Exam</title></head>
+  <body>
+    <p class="monitor"></p>
+    <script>
+    
+      function sortArray(array){
+        const len = array.length;
+        for(let i = 0 ; i < len ; i++){ 
+          for(let j = i ; j  < len ; j++){ 
+            if(array[i] < array[j]){
+              let x = array[i];
+              array[i] = array[j]
+              array[j]=x;
+            }
+          }
+        }
+        return array;
+      }
+       
+      function searchNum (array, randNum){
+        const len = array.length;
+        for(i = 0 ; i < len ; i++){
+          if(array[i] === randNum){
+            console.log(i);
+          }else{
+            console.log(-1);
+          }
+        }
+      }
+      function isPrimeNumber (number){
+        if( number === 2 ||  number === 3 || number === 5 || number === 7 || number === 11 ){
+          document.querySelector('.monitor').innerHTML = 'It is a prime number.';
+        }else if(number% 2 === 0 || number% 3 === 0  || number% 5 === 0  || number% 7 === 0  || number% 11 === 0){
+          document.querySelector('.monitor').innerHTML = 'It is not a prime number.';
+        }else{
+          document.querySelector('.monitor').innerHTML = 'It is a prime number.';
+        }
+      }
+
+      function isPrimeNumber2 (number){
+        let resultArray = [];
+       for (i = 2 ; i < number; i++){
+        let result = number % i;
+        resultArray.push(result);
+        console.log(resultArray);
+        let len = resultArray.length;
+        for(let j = 0 ; j < len ; j++){
+          if(resultArray[j] === 0){
+            document.querySelector('.monitor').innerHTML = 'It is not a prime number.';
+          } else{
+            document.querySelector('.monitor').innerHTML = 'It is a prime number.';
+          }
+        }
+       }
+      }
+      isPrimeNumber2(19);
+    </script>
+  </body>
+</html>
