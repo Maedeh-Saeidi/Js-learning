@@ -7,7 +7,7 @@ return n * recursiveFactorial(n-1);
 }
 console.log(recursiveFactorial(5));
 //Big-O = O(n) 
-
+ 
 
 function recursiveFactorial1(n){
   if( n === 0){
