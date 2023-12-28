@@ -8,7 +8,7 @@ for(let i = 0; i < array.length ; i++){
   console.log(array[i]);
 }
 
-//Big O:
+//Big O
 //map, filter, reduce, concat, slice and splice
 //insert/remove from beginning -O(n)
 //Access O(1)
