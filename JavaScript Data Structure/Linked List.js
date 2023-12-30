@@ -28,6 +28,20 @@ class LinkedList {
     }
     this.size++
   }
+   //O(n)
+   append(value){
+    const node = new Node(value)
+    if(this.isEmpty()){
+      this.head = node
+    }else {
+      let prev = this.head
+      while(prev.next){
+        prev = prev.next
+      }
+      prev.next = node
+    }
+    this.size ++
+  }
   insert(value, index){
     if(index < 0 || index > this.size) return
     if(index === 0) this.prepend(value)
@@ -87,7 +101,7 @@ class LinkedList {
     else{
       let curr = this.head
       for(let i = 0; i < this.size - 1; i++){
-        if(curr.value === value) return 1
+        if(curr.value === value) return i
         curr = curr.next
       }
       */
@@ -102,7 +116,17 @@ class LinkedList {
      }
      return -1
   }
-
+  reverse(){
+    let prev = null
+    let curr = this.head
+    while(curr) {
+      let next = curr.next
+      curr.next = prev
+      prev = curr
+      curr = next
+    }
+    this.head = prev
+  }
   print(){
     if(this.isEmpty()) console.log('The list is empty!')
     else{
@@ -115,20 +139,6 @@ class LinkedList {
       console.log(listValues) 
   }
   }
-  //O(n)
-  append(value){
-    const node = new Node(value)
-    if(this.isEmpty()){
-      this.head = node
-    }else {
-      let prev = this.head
-      while(prev.next){
-        prev = prev.next
-      }
-      prev.next = node
-    }
-    this.size ++
-  }
 }
 const list = new LinkedList()
 console.log('List is empty?' , list.isEmpty())
@@ -137,7 +147,6 @@ console.log('List size', list.getSize())
 
 list.print();
 list.prepend(10);
-console.log(list.head)
 
 list.print();
 list.append(20);
@@ -158,3 +167,6 @@ list.print();
 console.log(list.removeValue(30))
 list.print();
 console.log(list.search(10))
+
+list.reverse()
+list.print()
