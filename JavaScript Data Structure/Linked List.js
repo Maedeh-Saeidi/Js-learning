@@ -83,15 +83,16 @@ class LinkedList {
   }
   search(value){
     if(this.isEmpty()) return -1
+     /* My solution:
     else{
       let curr = this.head
-      /* My solution:
       for(let i = 0; i < this.size - 1; i++){
         if(curr.value === value) return 1
         curr = curr.next
       }
       */
      let i = 0;
+     let curr = this.head
      while(curr){
       if(curr.value === value){
         return i
@@ -100,8 +101,6 @@ class LinkedList {
       i++
      }
      return -1
-    }
-
   }
 
   print(){
@@ -159,5 +158,3 @@ list.print();
 console.log(list.removeValue(30))
 list.print();
 console.log(list.search(10))
-list.search(10)
-list.print();``
