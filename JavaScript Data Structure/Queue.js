@@ -6,7 +6,7 @@ class Queue {
     this.items.push(element)
   }
   dequeue(){
-    return this.items.shift()
+    return this.items.shift() //Big-O(n)
   }
   isEmpty(){
     return this.items.length === 0
