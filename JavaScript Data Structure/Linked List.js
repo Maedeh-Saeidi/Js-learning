@@ -81,6 +81,29 @@ class LinkedList {
       return null
     }
   }
+  search(value){
+    if(this.isEmpty()) return -1
+    else{
+      let curr = this.head
+      /* My solution:
+      for(let i = 0; i < this.size - 1; i++){
+        if(curr.value === value) return 1
+        curr = curr.next
+      }
+      */
+     let i = 0;
+     while(curr){
+      if(curr.value === value){
+        return i
+      }
+      curr = curr.next
+      i++
+     }
+     return -1
+    }
+
+  }
+
   print(){
     if(this.isEmpty()) console.log('The list is empty!')
     else{
@@ -135,3 +158,6 @@ list.print();
 
 console.log(list.removeValue(30))
 list.print();
+console.log(list.search(10))
+list.search(10)
+list.print();``
