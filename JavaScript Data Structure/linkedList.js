@@ -4,7 +4,7 @@ class Node {
     this.next = null
   }
 }
-class LinkedList {
+export class LinkedList {
   constructor(){
     this.head = null
     this.tail = null
@@ -75,20 +75,4 @@ class LinkedList {
     return value
   }
 }
-const list = new LinkedList()
-console.log('List is empty?' , list.isEmpty())
-
-list.print();
-list.append(1);
-list.append(2);
-list.append(3);
-list.append(4);
-list.print();
-console.log('List size', list.getSize())
-list.removeFromEnd();
-list.print();
-list.prepend(0);
-list.print();
-
-list.removeFromFront()
-list.print();
+// module.exports = LinkedList
