@@ -14,7 +14,7 @@ class BinarySearchTree{
   }
   insert(value){
     const newNode = new Node(value)
-    if(this.isEmpty()) this.root === newNode
+    if(this.isEmpty()) this.root = newNode
     else {
       this.insertNode(this.root, newNode)
     }
@@ -27,7 +27,7 @@ class BinarySearchTree{
         this.insertNode(root.left, newNode)
       }
     }else {
-      if(root,right === null) root.right = newNode
+      if(root.right === null) root.right = newNode
       else {
         this.insertNode(root.right, newNode)
       }
@@ -41,3 +41,4 @@ console.log(bst.isEmpty());
 bst.insert(10)
 bst.insert(5)
 bst.insert(15)
+
