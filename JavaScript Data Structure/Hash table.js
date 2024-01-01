@@ -12,11 +12,26 @@ class HashTable {
   }
   set(key,value){
     const index = this.hash(key)
-    this.table[index] = value
+    // this.table[index] = value
+    const bucket = this.table[index]
+    if(!bucket){ 
+      bucket = [[key,value]]
+    }
+    else {
+      const sameKeyItem = bucket.find(item => item[0] === key)
+      if(sameKeyItem) sameKeyItem[1] = value
+      else{
+        bucket.push([key, value])
+      }
+    }
   }
   get(key){
     const index = this.hash(key)
-    return this.table[index]
+    // return this.table[index]
+    const bucket = this.table[index]
+    if(bucket){
+       const sameKeyItem = bucket.find(item => item[0] === key)
+    }
   }
   remove(key){
     const index = this.hash(key)
