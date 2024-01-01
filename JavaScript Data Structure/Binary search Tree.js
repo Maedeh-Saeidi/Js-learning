@@ -72,7 +72,14 @@ class BinarySearchTree{
       if(curr.left) queue.push(curr.left)
       if(curr.right) queue.push(curr.right)
     }
-
+  }
+  minLeaf(root){
+    if(!root.left) return root.value
+    else return this.minLeaf(root.left)
+  }
+  maxLeaf(root){
+    if(!root.right) return root.value
+    else return this.maxLeaf(root.right)
   }
 } 
 const bst = new BinarySearchTree()
@@ -86,6 +93,8 @@ bst.insert(7)
 
 bst.postOrder(bst.root)
 bst.levelOrder(bst.root)
+console.log(bst.minLeaf(bst.root))
+console.log(bst.maxLeaf(bst.root))
 
 
  
