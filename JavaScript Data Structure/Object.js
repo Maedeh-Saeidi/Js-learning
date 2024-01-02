@@ -24,14 +24,15 @@ const person = {
   active: true,
 }
 const keys = Object.keys(person);
+console.log('here');
 console.log(keys);
 const values = Object.values(person);
 console.log(values);
 const entries = Object.entries(person);
 console.log(entries[2]);
 
-for([key, value] of entries){
-  console.log(key);
+for([value] of entries){
+  // console.log(key);
   console.log(value);
 }
 
